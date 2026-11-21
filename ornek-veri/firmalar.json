@@ -1,0 +1,666 @@
+{
+ "surum": 3,
+ "firms": [
+  {
+   "id": "af0dc35c2682",
+   "ad": "Örnek Plastik A.Ş.",
+   "yetkili": "Yetkili Kişi 1",
+   "tel": "0500 000 00 01",
+   "eposta": "iletisim@ornekfirma1.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "",
+   "sozlesmeTarih": "",
+   "kontrolTarih": "",
+   "kontrolGunleri": [],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "",
+   "kusurTarih": "",
+   "olusturma": "2026-11-12T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-20T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-11-15T11:00:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "5bd04ba9cac9",
+     "asama": "bulma",
+     "metin": "Fuar ziyaretinde tanışıldı, katalog bırakıldı.",
+     "tarih": "2026-11-15T14:01:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "1f670580f6be",
+   "ad": "Demo Mobilya Ltd.",
+   "yetkili": "Yetkili Kişi 2",
+   "tel": "0500 000 00 02",
+   "eposta": "iletisim@ornekfirma2.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "",
+   "sozlesmeTarih": "",
+   "kontrolTarih": "",
+   "kontrolGunleri": [],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "",
+   "kusurTarih": "",
+   "olusturma": "2026-11-08T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-01T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-11-11T11:00:00.0000000+03:00",
+    "0-1": "2026-11-13T11:01:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "348964925512",
+     "asama": "genel",
+     "metin": "Gelecek hafta tekrar aranacak.",
+     "tarih": "2026-11-12T14:02:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "7ff637bfd8e9",
+   "ad": "Test Ambalaj San.",
+   "yetkili": "Yetkili Kişi 3",
+   "tel": "0500 000 00 03",
+   "eposta": "iletisim@ornekfirma3.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "2026-11-26",
+   "sozlesmeTarih": "",
+   "kontrolTarih": "",
+   "kontrolGunleri": [],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "",
+   "kusurTarih": "",
+   "olusturma": "2026-11-06T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-20T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-11-09T11:00:00.0000000+03:00",
+    "0-1": "2026-11-11T11:01:00.0000000+03:00",
+    "1-0": "2026-11-13T11:02:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "9b7a1029c908",
+     "asama": "kesif",
+     "metin": "Keşif için 26 Kasım saat 10:00 uygun dediler.",
+     "tarih": "2026-11-18T14:03:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "366163977465",
+   "ad": "Model Makine A.Ş.",
+   "yetkili": "Yetkili Kişi 4",
+   "tel": "0500 000 00 04",
+   "eposta": "iletisim@ornekfirma4.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "2026-11-03",
+   "sozlesmeTarih": "",
+   "kontrolTarih": "",
+   "kontrolGunleri": [],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "",
+   "kusurTarih": "",
+   "olusturma": "2026-10-19T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-04T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-10-22T11:00:00.0000000+03:00",
+    "0-1": "2026-10-24T11:01:00.0000000+03:00",
+    "1-0": "2026-10-26T11:02:00.0000000+03:00",
+    "1-1": "2026-10-28T11:03:00.0000000+03:00",
+    "1-2": "2026-10-30T11:04:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "d6e42460a9c5",
+     "asama": "kesif",
+     "metin": "Elektrik pano sayısı ~14, kompresör 2 adet.",
+     "tarih": "2026-11-03T14:04:00.0000000+03:00"
+    },
+    {
+     "id": "4a976c5314cc",
+     "asama": "sozlesme",
+     "metin": "Teklif yönetime iletildi, cevap bekleniyor.",
+     "tarih": "2026-11-13T14:04:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "5b6dcf6d7b20",
+   "ad": "Deneme Tekstil Ltd.",
+   "yetkili": "Yetkili Kişi 5",
+   "tel": "0500 000 00 05",
+   "eposta": "iletisim@ornekfirma5.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "2026-10-24",
+   "sozlesmeTarih": "2026-11-15",
+   "kontrolTarih": "2026-11-24",
+   "kontrolGunleri": [
+    "2026-11-24",
+    "2026-11-25"
+   ],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "",
+   "kusurTarih": "",
+   "olusturma": "2026-10-09T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-20T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-10-12T11:00:00.0000000+03:00",
+    "0-1": "2026-10-14T11:01:00.0000000+03:00",
+    "1-0": "2026-10-16T11:02:00.0000000+03:00",
+    "1-1": "2026-10-18T11:03:00.0000000+03:00",
+    "1-2": "2026-10-20T11:04:00.0000000+03:00",
+    "2-0": "2026-10-22T11:05:00.0000000+03:00",
+    "2-1": "2026-10-24T11:06:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "4e03bbb4e990",
+     "asama": "kontrol",
+     "metin": "Kontrol iki güne yayılacak (A ve B blok).",
+     "tarih": "2026-11-16T14:05:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "588600669d80",
+   "ad": "Taslak Gıda A.Ş.",
+   "yetkili": "Yetkili Kişi 6",
+   "tel": "0500 000 00 06",
+   "eposta": "iletisim@ornekfirma6.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretsiz",
+   "kesifTarih": "2026-10-17",
+   "sozlesmeTarih": "2026-11-07",
+   "kontrolTarih": "2026-11-12",
+   "kontrolGunleri": [
+    "2026-11-12",
+    "2026-11-19"
+   ],
+   "kontrolDevam": true,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "",
+   "kusurTarih": "",
+   "olusturma": "2026-10-04T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-20T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-10-07T11:00:00.0000000+03:00",
+    "0-1": "2026-10-09T11:01:00.0000000+03:00",
+    "1-0": "2026-10-11T11:02:00.0000000+03:00",
+    "1-1": "2026-10-13T11:03:00.0000000+03:00",
+    "1-2": "2026-10-15T11:04:00.0000000+03:00",
+    "2-0": "2026-10-17T11:05:00.0000000+03:00",
+    "2-1": "2026-10-19T11:06:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "7afa195741f5",
+     "asama": "kontrol",
+     "metin": "B blok kontrolü kaldı, tarih firma tarafından bildirilecek.",
+     "tarih": "2026-11-19T14:06:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "4cc9a6ac6a55",
+   "ad": "Prova Metal San.",
+   "yetkili": "Yetkili Kişi 7",
+   "tel": "0500 000 00 07",
+   "eposta": "iletisim@ornekfirma7.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "2026-10-02",
+   "sozlesmeTarih": "2026-10-22",
+   "kontrolTarih": "2026-11-06",
+   "kontrolGunleri": [
+    "2026-11-06"
+   ],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "",
+   "kusurTarih": "",
+   "olusturma": "2026-09-19T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-20T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-09-22T11:00:00.0000000+03:00",
+    "0-1": "2026-09-24T11:01:00.0000000+03:00",
+    "1-0": "2026-09-26T11:02:00.0000000+03:00",
+    "1-1": "2026-09-28T11:03:00.0000000+03:00",
+    "1-2": "2026-09-30T11:04:00.0000000+03:00",
+    "2-0": "2026-10-02T11:05:00.0000000+03:00",
+    "2-1": "2026-10-04T11:06:00.0000000+03:00",
+    "3-0": "2026-10-06T11:07:00.0000000+03:00",
+    "3-1": "2026-10-08T11:08:00.0000000+03:00",
+    "4-0": "2026-10-10T11:09:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "72c81dc89ca8",
+     "asama": "rapor",
+     "metin": "Raporlar hazırlandı, e-imza bekliyor.",
+     "tarih": "2026-11-17T14:07:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "f4cd977a9ccf",
+   "ad": "Numune Kimya A.Ş.",
+   "yetkili": "Yetkili Kişi 8",
+   "tel": "0500 000 00 08",
+   "eposta": "iletisim@ornekfirma8.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "2026-09-12",
+   "sozlesmeTarih": "2026-09-27",
+   "kontrolTarih": "2026-10-12",
+   "kontrolGunleri": [
+    "2026-10-12"
+   ],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "Kusur var – giderilmesi bekleniyor",
+   "kusurTarih": "2026-11-03T10:00:00.0000000+03:00",
+   "olusturma": "2026-08-30T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-20T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-09-02T11:00:00.0000000+03:00",
+    "0-1": "2026-09-04T11:01:00.0000000+03:00",
+    "1-0": "2026-09-06T11:02:00.0000000+03:00",
+    "1-1": "2026-09-08T11:03:00.0000000+03:00",
+    "1-2": "2026-09-10T11:04:00.0000000+03:00",
+    "2-0": "2026-09-12T11:05:00.0000000+03:00",
+    "2-1": "2026-09-14T11:06:00.0000000+03:00",
+    "3-0": "2026-09-16T11:07:00.0000000+03:00",
+    "3-1": "2026-09-18T11:08:00.0000000+03:00",
+    "4-0": "2026-09-20T11:09:00.0000000+03:00",
+    "4-1": "2026-09-22T11:10:00.0000000+03:00",
+    "4-2": "2026-09-24T11:11:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "af5bdf7d4490",
+     "asama": "kusur",
+     "metin": "Topraklama ölçümünde 2 noktada uygunsuzluk; firmaya bildirildi.",
+     "tarih": "2026-11-03T14:08:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "0e833a05bf7e",
+   "ad": "Örnek Otomotiv Ltd.",
+   "yetkili": "Yetkili Kişi 9",
+   "tel": "0500 000 00 09",
+   "eposta": "iletisim@ornekfirma9.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "2026-08-03",
+   "sozlesmeTarih": "2026-08-18",
+   "kontrolTarih": "2026-09-02",
+   "kontrolGunleri": [
+    "2026-09-02",
+    "2026-09-03"
+   ],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "Kusurlar giderildi",
+   "kusurTarih": "",
+   "olusturma": "2026-07-21T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-20T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-07-24T11:00:00.0000000+03:00",
+    "0-1": "2026-07-26T11:01:00.0000000+03:00",
+    "1-0": "2026-07-28T11:02:00.0000000+03:00",
+    "1-1": "2026-07-30T11:03:00.0000000+03:00",
+    "1-2": "2026-08-01T11:04:00.0000000+03:00",
+    "2-0": "2026-08-03T11:05:00.0000000+03:00",
+    "2-1": "2026-08-05T11:06:00.0000000+03:00",
+    "3-0": "2026-08-07T11:07:00.0000000+03:00",
+    "3-1": "2026-08-09T11:08:00.0000000+03:00",
+    "4-0": "2026-08-11T11:09:00.0000000+03:00",
+    "4-1": "2026-08-13T11:10:00.0000000+03:00",
+    "4-2": "2026-08-15T11:11:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "3b8da8eebe54",
+     "asama": "kusur",
+     "metin": "Kusurların giderildiği fotoğraflarla teyit edildi.",
+     "tarih": "2026-09-22T14:09:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "45f536f79cff",
+   "ad": "Demo Lojistik A.Ş.",
+   "yetkili": "Yetkili Kişi 10",
+   "tel": "0500 000 00 10",
+   "eposta": "iletisim@ornekfirma10.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "2026-07-04",
+   "sozlesmeTarih": "2026-07-24",
+   "kontrolTarih": "2026-08-13",
+   "kontrolGunleri": [
+    "2026-08-13"
+   ],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "Kusurlar giderilmedi – hizmet kusurlu tamamlandı",
+   "kusurTarih": "",
+   "olusturma": "2026-06-21T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-20T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-06-24T11:00:00.0000000+03:00",
+    "0-1": "2026-06-26T11:01:00.0000000+03:00",
+    "1-0": "2026-06-28T11:02:00.0000000+03:00",
+    "1-1": "2026-06-30T11:03:00.0000000+03:00",
+    "1-2": "2026-07-02T11:04:00.0000000+03:00",
+    "2-0": "2026-07-04T11:05:00.0000000+03:00",
+    "2-1": "2026-07-06T11:06:00.0000000+03:00",
+    "3-0": "2026-07-08T11:07:00.0000000+03:00",
+    "3-1": "2026-07-10T11:08:00.0000000+03:00",
+    "4-0": "2026-07-12T11:09:00.0000000+03:00",
+    "4-1": "2026-07-14T11:10:00.0000000+03:00",
+    "4-2": "2026-07-16T11:11:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "1eb02360b2f0",
+     "asama": "kusur",
+     "metin": "30 gün geçti, kusurlar giderilmedi. Hizmet otomatik olarak “kusurlu tamamlandı” durumuna geçirildi.",
+     "tarih": "2026-09-13T14:10:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "a9ed79966ede",
+   "ad": "Test Enerji A.Ş.",
+   "yetkili": "Yetkili Kişi 11",
+   "tel": "0500 000 00 11",
+   "eposta": "iletisim@ornekfirma11.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "2025-11-16",
+   "sozlesmeTarih": "2025-11-26",
+   "kontrolTarih": "2025-12-11",
+   "kontrolGunleri": [
+    "2025-12-11"
+   ],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "Kusur yok",
+   "kusurTarih": "",
+   "olusturma": "2025-11-03T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-20T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2025-11-06T11:00:00.0000000+03:00",
+    "0-1": "2025-11-08T11:01:00.0000000+03:00",
+    "1-0": "2025-11-10T11:02:00.0000000+03:00",
+    "1-1": "2025-11-12T11:03:00.0000000+03:00",
+    "1-2": "2025-11-14T11:04:00.0000000+03:00",
+    "2-0": "2025-11-16T11:05:00.0000000+03:00",
+    "2-1": "2025-11-18T11:06:00.0000000+03:00",
+    "3-0": "2025-11-20T11:07:00.0000000+03:00",
+    "3-1": "2025-11-22T11:08:00.0000000+03:00",
+    "4-0": "2025-11-24T11:09:00.0000000+03:00",
+    "4-1": "2025-11-26T11:10:00.0000000+03:00",
+    "4-2": "2025-11-28T11:11:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "6d08452d40db",
+     "asama": "genel",
+     "metin": "Yıllık periyodik kontrol yaklaşıyor, firmaya hatırlatma yapılacak.",
+     "tarih": "2026-11-20T14:11:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "9021202f763e",
+   "ad": "Model İnşaat Ltd.",
+   "yetkili": "Yetkili Kişi 12",
+   "tel": "0500 000 00 12",
+   "eposta": "iletisim@ornekfirma12.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "2026-05-15",
+   "sozlesmeTarih": "2026-05-25",
+   "kontrolTarih": "2026-06-04",
+   "kontrolGunleri": [
+    "2026-06-04"
+   ],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 6,
+   "hatirlatGun": 45,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "Kusur yok",
+   "kusurTarih": "",
+   "olusturma": "2026-05-02T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-20T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-05-05T11:00:00.0000000+03:00",
+    "0-1": "2026-05-07T11:01:00.0000000+03:00",
+    "1-0": "2026-05-09T11:02:00.0000000+03:00",
+    "1-1": "2026-05-11T11:03:00.0000000+03:00",
+    "1-2": "2026-05-13T11:04:00.0000000+03:00",
+    "2-0": "2026-05-15T11:05:00.0000000+03:00",
+    "2-1": "2026-05-17T11:06:00.0000000+03:00",
+    "3-0": "2026-05-19T11:07:00.0000000+03:00",
+    "3-1": "na",
+    "4-0": "2026-05-23T11:09:00.0000000+03:00",
+    "4-1": "2026-05-25T11:10:00.0000000+03:00",
+    "4-2": "2026-05-27T11:11:00.0000000+03:00"
+   },
+   "notlar": []
+  },
+  {
+   "id": "ad2c61bf4fbb",
+   "ad": "Deneme Seramik San.",
+   "yetkili": "Yetkili Kişi 13",
+   "tel": "0500 000 00 13",
+   "eposta": "iletisim@ornekfirma13.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "İptal / Olumsuz",
+   "ucret": "Ücretli",
+   "kesifTarih": "",
+   "sozlesmeTarih": "",
+   "kontrolTarih": "",
+   "kontrolGunleri": [],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "",
+   "kusurTarih": "",
+   "olusturma": "2026-10-24T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-06T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-10-27T11:00:00.0000000+03:00",
+    "0-1": "2026-10-29T11:01:00.0000000+03:00",
+    "1-0": "2026-10-31T11:02:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "d2d0541b9fdd",
+     "asama": "genel",
+     "metin": "Başka firma ile çalışmaya karar verdiler.",
+     "tarih": "2026-11-06T14:13:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "053d5c84c799",
+   "ad": "Taslak Depo Ltd.",
+   "yetkili": "Yetkili Kişi 14",
+   "tel": "0500 000 00 14",
+   "eposta": "iletisim@ornekfirma14.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "",
+   "sozlesmeTarih": "",
+   "kontrolTarih": "",
+   "kontrolGunleri": [],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": true,
+   "arsivTarih": "2026-11-19T10:00:00.0000000+03:00",
+   "donemler": [],
+   "kusur": "",
+   "kusurTarih": "",
+   "olusturma": "2026-10-09T09:00:00.0000000+03:00",
+   "guncelleme": "2026-11-20T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-10-12T11:00:00.0000000+03:00",
+    "0-1": "2026-10-14T11:01:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "61c44a532fcc",
+     "asama": "genel",
+     "metin": "Firma kapandı, arşive alındı.",
+     "tarih": "2026-11-19T14:14:00.0000000+03:00"
+    }
+   ]
+  },
+  {
+   "id": "5b74f56761ab",
+   "ad": "Prova Elektronik A.Ş.",
+   "yetkili": "Yetkili Kişi 15",
+   "tel": "0500 000 00 15",
+   "eposta": "iletisim@ornekfirma15.com",
+   "adres": "Örnek OSB, Örnek İlçe",
+   "durum": "Aktif",
+   "ucret": "Ücretli",
+   "kesifTarih": "",
+   "sozlesmeTarih": "",
+   "kontrolTarih": "",
+   "kontrolGunleri": [],
+   "kontrolDevam": false,
+   "sonrakiKontrol": "",
+   "periyotAy": 12,
+   "hatirlatGun": 30,
+   "otoKapat": true,
+   "arsiv": false,
+   "arsivTarih": "",
+   "donemler": [],
+   "kusur": "",
+   "kusurTarih": "",
+   "olusturma": "2026-10-14T09:00:00.0000000+03:00",
+   "guncelleme": "2026-10-24T15:30:00.0000000+03:00",
+   "checks": {
+    "0-0": "2026-10-17T11:00:00.0000000+03:00",
+    "0-1": "2026-10-19T11:01:00.0000000+03:00"
+   },
+   "notlar": [
+    {
+     "id": "9ee1349d729e",
+     "asama": "bulma",
+     "metin": "Yetkili izinde, dönüşte aranacak.",
+     "tarih": "2026-10-24T14:15:00.0000000+03:00"
+    }
+   ]
+  }
+ ],
+ "savedAt": "2026-11-21T10:00:00Z"
+}

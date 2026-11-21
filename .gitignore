@@ -1,0 +1,8 @@
+# Derleme çıktıları
+dist/*.exe
+*.tmp
+# Gerçek veriler asla depoya girmesin
+veri/
+**/veri/
+hata-kaydi.txt
+*.bozuk-*.json

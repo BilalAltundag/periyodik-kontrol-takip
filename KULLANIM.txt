@@ -1,0 +1,118 @@
+PERIYODIK KONTROL TAKIP v4.2 - KULLANIM
+=======================================
+Normal bir Windows programidir (tarayici / internet kullanmaz).
+
+GUNCELLEME (VERILER KAYBOLMADAN)
+1) Programi kapatin.
+2) Bu paketteki PeriyodikKontrolTakip.exe ve KULLANIM.txt dosyalarini,
+   mevcut programin bulundugu klasore kopyalayip "Degistir" deyin.
+3) "veri" klasorune DOKUNMAYIN. Tum firmalar, notlar ve tarihler oradadir;
+   yeni surum ayni dosyayi okur. (Paket bilerek "veri" klasoru icermez.)
+- Istege bagli: guncellemeden once "veri" klasorunun bir kopyasini alin.
+- Eski kontrol tarihleri otomatik olarak "Kontrol gunleri" listesine aktarilir.
+
+YENI KURULUM
+1) PeriyodikKontrolTakip klasorunu Masaustu'ne veya D:\ icine kopyalayin.
+   (Program Files icine KOYMAYIN.)
+2) PeriyodikKontrolTakip.exe'ye cift tiklayin.
+3) Kisayol: exe'ye sag tik > Gonder > Masaustu (kisayol olustur).
+- "Windows bilgisayarinizi korudu" cikarsa: "Ek bilgi" > "Yine de calistir".
+
+GEREKSINIM
+- Windows 10 / 11 (.NET Framework 4.x Windows ile birlikte yuklu gelir). Ek kurulum yok.
+
+EKRANLAR (sol ustteki secici)
+- Firmalar : liste ve firma detayi                       (Ctrl+L)
+- Takvim   : aylik takvim - kesif, kontrol gunleri, yillik kontrol,
+             kusur suresi son gunu. Firmaya tiklayinca detayi acilir.  (Ctrl+T)
+- Rapor    : aylik ozet (yeni firma, kesif, sozlesme, kontrol, rapor; gecen
+             ayla karsilastirma), kesiften sozlesmeye ortalama sure, son 6 ay
+             grafigi, onumuzdeki 12 ayin yillik kontrol grafigi.        (Ctrl+R)
+- Arsiv    : silinen (arsive tasinan) firmalar. Buradan "Arsivden cikar"
+             ile geri alinir veya kalici olarak silinir.               (Ctrl+H)
+
+BEKLEMEDE (HAREKETSIZ FIRMA)
+- Devam eden ve 14 gundur uzerinde hicbir degisiklik yapilmamis firmalar
+  "Beklemede - X g" olarak isaretlenir; "Yaklasan ve Takip"te de gorunur.
+- Firmada herhangi bir degisiklik (not ekleme dahil) uyariyi kaldirir.
+- Asama filtresinde "Beklemede" secenegi ile hepsi listelenir.
+
+SONRAKI PERIYODIK KONTROL VE HATIRLATMA
+- Kontrol asamasi (elektrik/mekanik) bitince sonraki kontrol tarihi
+  = kontrolun bittigi gun + periyot olarak kendiliginden hesaplanir.
+- Her firma icin ayri ayarlanir (Planlama > "Sonraki periyodik kontrol"):
+    Periyot  : 3 ay / 6 ay / 1 yil (varsayilan) / 2 yil / Diger (ay)
+    Hatirlat : 7 / 15 / 30 (varsayilan) / 45 / 60 / 90 gun once / Diger (gun)
+- Periyot degisince tarih yeniden hesaplanir. Tarih elle de degistirilebilir;
+  temizlenirse otomatik tarihe doner.
+- Hatirlatma, ayarlanan gun kadar once "Yaklasan ve Takip"te gorunur.
+- "Yeni donem baslat": bu donemin isini kapatir (ozet not olarak eklenir),
+  is akisini sifirlar ve sonraki tarihi kontrol gunu olarak ekler.
+  Notlar, iletisim, ucret, periyot ve hatirlatma ayari korunur.
+
+SILME = ARSIV
+- Copa (sil) basinca firma kalici silinmez, Arsiv'e tasinir.
+- Kalici silme yalnizca Arsiv ekraninda yapilir.
+
+DURUM KATEGORILERI
+- Devam Eden        : is akisi suruyor
+- Kusur Bekleyen    : 6. adimda "Kusur var - giderilmesi bekleniyor" secili.
+                      Sure, "Kusur var" isaretlendigi gun otomatik baslar (rapor gonderim
+                      tarihine bagli degildir). Baslangic tarihi degistirilebilir:
+                      Planlama > "Kusur suresi baslangici" alanindan veya 6. adimdaki
+                      "12. gun" dugmesine tiklayarak. Gecmis bir tarih secilebilir.
+                      Listede "Kusur - 12. gun"; 30 gunluk sure ve son gun
+                      "Yaklasan ve Takip" bolumunde gosterilir.
+                      30 gun gecip kusurlar giderilmediyse (31. gun) firma OTOMATIK
+                      olarak "Kusurlu tamamlandi" durumuna gecer, firmaya not eklenir
+                      ve program acilisinda/acikken bilgi mesaji verir.
+                      Firma bazinda "Sure dolunca otomatik kapat" dugmesiyle kapatilabilir.
+                      Yeniden acmak icin 6. adimda baska bir secenek secin.
+- Uygun Tamam       : tum asamalar bitti, kusur yok / kusurlar giderildi
+- Kusurlu Tamam     : 6. adimda "Kusurlar giderilmedi - hizmet kusurlu tamamlandi" secili.
+                      Hizmet kapanir; istediginizde baska secenegi secerek (veya ayni
+                      secenege tekrar tiklayarak) yeniden acabilirsiniz.
+- Iptal / Olumsuz   : Genel durum "Iptal / Olumsuz"
+
+KONTROL GUNLERI (BIRDEN FAZLA GUN)
+- Planlama > "Kontrol gunleri (ekle)": tarih secin veya yazin, listeye eklenir.
+  Istediginiz kadar gun ekleyin; cipteki x ile silin.
+- Gecmis kontrol gunleri "gecikti" SAYILMAZ (o gunun kontrolu yapildi kabul edilir).
+- Sonraki gun belli degilse "Devam edecek - sonraki gun belirsiz" isaretleyin;
+  "Yaklasan ve Takip"te "Kontrol suruyor - tarih belirsiz" olarak gorunur.
+- Kontrol, 4. adimdaki Elektrik / Mekanik isaretlenince biter.
+
+IS AKISI
+1 Firma Bulma      : Uygun firma bulundu / Iletisim ve gerekli bilgiler kaydedildi
+2 Kesif            : Kesif-kontrol gunu kaydedildi / Kesif yapildi / Kesif dosyasi pazarlamaya gonderildi
+3 Sozlesme         : Teklif kabul edildi / ISG-KATIP sozlesmesi yapildi
+4 Kontrol          : Elektrik kontrolu yapildi / Mekanik kontrolu yapildi
+                     (Gerekmeyen satir icin satirin uzerine gelip "Gerekmiyor" deyin)
+5 E-Imza ve Rapor  : Raporlar hazirlandi / E-imza ile imzalandi / Pazarlama ekibine iletildi
+6 Kusur / Eksiklik : Kusur yok / Kusur var - giderilmesi bekleniyor / Kusurlar giderildi /
+                     Kusurlar giderilmedi - hizmet kusurlu tamamlandi
+
+TARIHLERIN DUZELTILMESI
+- Is akisinda isaretlenen her maddenin sagindaki tarihe tiklayin; takvimden
+  gercek tarihi secin (ornegin gecmiste yapilan bir isi bugun isaretlediyseniz).
+- Planlama tarihleri (kesif, ISG-KATIP, kontrol gunleri) ve kusur suresi
+  baslangici da her zaman degistirilebilir.
+
+NOTLAR
+- Konu cipini secin, notu yazin, "Not ekle" (veya Ctrl+Enter).
+- Nota tiklayinca duzenlenir; uzerine gelince cop kutusu ile silinir.
+
+VERILER
+- exe'nin yanindaki  veri\firmalar.json ; her degisiklikte otomatik kaydedilir.
+- Gunluk otomatik yedek: veri\yedekler (son 30 gun).
+- Excel'e aktarma: sol alttaki ok simgesi veya Ctrl+E. Bicimli .xlsx dosyasi:
+  Firmalar, Notlar, Yillik Kontrol, Aylik Ozet sayfalari (CSV de secilebilir).
+- Hata olursa: hata-kaydi.txt dosyasini gonderin.
+
+KISAYOLLAR
+- Ctrl+N : Yeni firma            - Ctrl+F : Ara
+- Ctrl+Yukari/Asagi : Onceki / sonraki firma
+- Ctrl+1..6 : Tumu / Devam / Kusur / Uygun / Kusurlu / Iptal   - Ctrl+0 : Filtreleri temizle
+- F2 : Firma adini duzenle       - Ctrl+Enter : Notu kaydet
+- Ctrl+L/T/R/H : Firmalar / Takvim / Rapor / Arsiv
+- Ctrl+E : Excel'e aktar         - Esc : Duzenlemeyi / aramayi iptal   - F1 : Yardim

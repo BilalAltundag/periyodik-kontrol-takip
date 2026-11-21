@@ -1,0 +1,3 @@
+Ornek veri (gercek firma bilgisi degildir).
+Denemek icin bu klasorun adini "veri" yapin ve programi acin.
+Kendi kullaniminiz icin bu klasoru silin; program bos veriyle baslar.
