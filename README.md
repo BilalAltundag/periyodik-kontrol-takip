@@ -2,7 +2,7 @@
 
 Elektrik ve mekanik **periyodik kontrol** hizmetlerinin satış öncesinden rapor teslimine ve yıllık yenilemeye kadar tüm sürecini tek ekranda takip eden, sade bir Windows masaüstü uygulaması.
 
-Elektrik-elektronik mühendisi olarak periyodik kontrol uzmanlığı yaptığım dönemde, firma takibini düzenli hâle getirmek için kendi ihtiyacımdan yola çıkarak geliştirdim. Günlük işte kullandım ve sahada ihtiyaç duyulan özellikleri zamanla ekledim.
+Temmuz–Aralık 2026 arasında elektrik-elektronik mühendisi olarak elektrik periyodik kontrol uzmanı görevinde çalıştım; şirketin işleyişini baştan sona yöneten kişilerden biriydim ve elektrik kontrollerini keşiften rapora kadar baştan sona yürüttüm. Bu uygulama, sahada ve şirket yönetiminde edindiğim tecrübeler üzerine kurduğum, günlük işte kullandığım takip aracıdır.
 
 > Bu depodaki tüm firma bilgileri **örnek veridir** (Örnek Plastik A.Ş., Demo Mobilya Ltd. …). Gerçek müşteri bilgisi içermez.
 
