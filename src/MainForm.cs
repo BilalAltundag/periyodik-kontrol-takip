@@ -319,11 +319,15 @@ namespace PKT
             {
                 if (cur == null) return;
                 cur.kesifYok = !cur.kesifYok;
-                if (cur.kesifYok) { cur.kesifTarih = ""; binding = true; dKe.SetValue(null, false); binding = false; }
+                if (cur.kesifYok)
+                {
+                    cur.kesifTarih = ""; binding = true; dKe.SetValue(null, false); binding = false;
+                    if (!cur.checks.ContainsKey("1f-0")) cur.checks["1f-0"] = U.Now();
+                }
                 dKe.Enabled = !cur.kesifYok;
                 Changed(); LayoutDetail();
             };
-            tip.SetToolTip(bKesifYok, "Firma yapılacak kalemleri kendisi ilettiyse işaretleyin: keşif tarihi pasif olur ve Keşif aşaması iş akışından çıkar.");
+            tip.SetToolTip(bKesifYok, "Firma yapılacak kalemleri kendisi ilettiyse işaretleyin: keşif tarihi pasif olur, 2. aşama “Keşif” yerine “Firma İletti” olarak gösterilir.");
             dc.Controls.Add(bKesifYok);
             dSo = DateBox(v => { cur.sozlesmeTarih = v; if (v != "" && !Flow.Done(cur, 2, 1)) cur.checks["2-1"] = new DateTimeOffset(U.PD(v).Value + DateTime.Now.TimeOfDay).ToString("o"); });
             dKo = DateBox(v => { if (v != "" && !cur.kontrolGunleri.Contains(v)) cur.kontrolGunleri.Add(v); Flow.SyncKontrol(cur); });
@@ -369,7 +373,7 @@ namespace PKT
                 var sc0 = s;
                 s.ItemDateClick += (ix, pt) =>
                 {
-                    string key = Flow.Key(sc0.S, ix);
+                    string key = Flow.Key(cur, sc0.S, ix);
                     var old = U.PT(cur.checks[key]);
                     PickDate(sc0, pt, old, d =>
                     {
@@ -591,10 +595,8 @@ namespace PKT
             // İş akışı
             y = Section(hAkis, y);
             bool two = w >= Th.D(600);
-            // Keşif gerekmediyse Keşif aşaması gösterilmez; numaralar kayar
-            var vis = stages.Where(s => !(s.S == 1 && cur.kesifYok)).ToList();
-            foreach (var s in stages) s.Visible = vis.Contains(s);
-            for (int i = 0; i < vis.Count; i++) vis[i].Num = i + 1;
+            var vis = stages.ToList();
+            foreach (var s in stages) { s.Visible = true; s.Num = s.S + 1; }
             if (two)
             {
                 int cwid = (w - gap) / 2;

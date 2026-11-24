@@ -260,28 +260,36 @@ namespace PKT
         public static Color StageColor(int i) { return i == 7 ? Brown : i >= DONE ? Th.Green : S[i].Color; }
         public static int Bucket(Firm f) { int c = Current(f); return c < DONE ? c : (f.kusur == KusurluTam ? 7 : DONE); }
 
+        // Keşif gerekmeyen firmada 2. aşamanın yerine geçen "Firma İletti" aşaması (notlarda Keşif konusu kullanılır)
+        public static readonly Stage FirmaIletti = new Stage("kesif", "Firma İletti", "Firma iletti", Th.Blue, false,
+            "Yapılacak kalemler firma tarafından iletildi", "Kalemler teklif için pazarlama departmanına gönderildi");
+        public static Stage ViewOf(Firm f, int s) { return s == 1 && f != null && f.kesifYok ? FirmaIletti : S[s]; }
+
         public static string Key(int s, int i) { return s + "-" + i; }
-        public static bool Done(Firm f, int s, int i) { string v; return f.checks.TryGetValue(Key(s, i), out v) && !string.IsNullOrEmpty(v); }
-        public static bool NA(Firm f, int s, int i) { string v; return f.checks.TryGetValue(Key(s, i), out v) && v == "na"; }
+        public static string Key(Firm f, int s, int i) { return s == 1 && f != null && f.kesifYok ? "1f-" + i : Key(s, i); }
+        public static bool Done(Firm f, int s, int i) { string v; return f.checks.TryGetValue(Key(f, s, i), out v) && !string.IsNullOrEmpty(v); }
+        public static bool NA(Firm f, int s, int i) { string v; return f.checks.TryGetValue(Key(f, s, i), out v) && v == "na"; }
         public static bool StageDone(Firm f, int s)
         {
             if (S[s].Radio) return f.kusur == KusurYok || f.kusur == KusurGid || f.kusur == KusurluTam;
-            if (s == 1 && f.kesifYok) return true;
-            for (int i = 0; i < S[s].Items.Length; i++) if (!Done(f, s, i)) return false;
+            var st = ViewOf(f, s);
+            for (int i = 0; i < st.Items.Length; i++) if (!Done(f, s, i)) return false;
             return true;
         }
         public static int StageCount(Firm f, int s)
         {
             if (S[s].Radio) return StageDone(f, s) ? 1 : 0;
-            int n = 0; for (int i = 0; i < S[s].Items.Length; i++) if (Done(f, s, i)) n++;
+            var st = ViewOf(f, s);
+            int n = 0; for (int i = 0; i < st.Items.Length; i++) if (Done(f, s, i)) n++;
             return n;
         }
         public static int StageTotal(int s) { return S[s].Radio ? 1 : S[s].Items.Length; }
+        public static int StageTotal(Firm f, int s) { return S[s].Radio ? 1 : ViewOf(f, s).Items.Length; }
         public static int Current(Firm f) { if (f.kusur == KusurluTam) return DONE; for (int s = 0; s < S.Length; s++) if (!StageDone(f, s)) return s; return DONE; }
         public static int Percent(Firm f)
         {
             int t = 0, d = 0;
-            for (int s = 0; s < S.Length; s++) { if (s == 1 && f.kesifYok) continue; t += StageTotal(s); d += StageCount(f, s); }
+            for (int s = 0; s < S.Length; s++) { t += StageTotal(f, s); d += StageCount(f, s); }
             return t == 0 ? 0 : (int)Math.Round(100.0 * d / t);
         }
         public enum Cat { Devam = 1, Kusur = 2, Tamam = 3, KusurluTamam = 4, Iptal = 5 }

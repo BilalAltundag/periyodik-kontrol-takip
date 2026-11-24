@@ -388,7 +388,7 @@ namespace PKT
             if (F.arsiv) x = Pill(g, x, "Arşivde · " + U.TS(F.arsivTarih).Split(' ')[0], Th.GrayDark) + Th.D(6);
             x = Pill(g, x, Flow.CatName(cat), Flow.CatColor(cat)) + Th.D(6);
             if (Flow.Idle(F)) x = Pill(g, x, "Beklemede · " + Flow.IdleDays(F) + " gündür işlem yok", Th.H("#C99A00")) + Th.D(6);
-            if (cur < Flow.DONE) x = Pill(g, x, "Şu an: " + Flow.S[cur].Short, Flow.S[cur].Color) + Th.D(6);
+            if (cur < Flow.DONE) x = Pill(g, x, "Şu an: " + Flow.ViewOf(F, cur).Short, Flow.S[cur].Color) + Th.D(6);
             if (F.ucret != "") x = Pill(g, x, F.ucret, F.ucret == Flow.Ucretsiz ? Th.Teal : Th.Indigo) + Th.D(10);
             string t = "Güncelleme: " + U.TS(F.guncelleme);
             G.T(g, t, Th.F(8.5f), new Rectangle(x, 0, Width - x, Height), Th.Sub, G.L);
@@ -423,7 +423,7 @@ namespace PKT
         public int Calc(int width)
         {
             rows.Clear(); naLinks.Clear(); dateLinks.Clear();
-            var st = Flow.S[S];
+            var st = Flow.ViewOf(F, S);
             int pad = Th.D(12), y = Th.D(46);
             int textW = width - pad * 2 - Th.D(30) - Th.D(S == 3 ? 86 : 70);
             for (int i = 0; i < st.Items.Length; i++)
@@ -442,7 +442,7 @@ namespace PKT
             var g = Begin(e);
             if (F == null) return;
             Calc(Width);
-            var st = Flow.S[S];
+            var st = Flow.ViewOf(F, S);
             bool done = Flow.StageDone(F, S);
             var bg = new RectangleF(0, 0, Width - 1, Height - 1);
             G.Fill(g, bg, Th.D(12), Th.Soft);
@@ -467,7 +467,7 @@ namespace PKT
 
             string cnt;
             if (st.Radio) cnt = F.kusur == Flow.KusurluTam ? "Kusurlu kapandı" : done ? "Tamam" : (F.kusur == Flow.KusurVar ? "Bekleniyor" : "Seçilmedi");
-            else cnt = Flow.StageCount(F, S) + "/" + Flow.StageTotal(S);
+            else cnt = Flow.StageCount(F, S) + "/" + Flow.StageTotal(F, S);
             int cw = G.TW(cnt, Th.F(8.5f));
             G.T(g, cnt, Th.F(8.5f), new Rectangle(noteChip.X - cw - Th.D(8), Th.D(11), cw + 2, (int)cs), Th.Sub, G.L);
             G.T(g, st.Title, Th.F(10f, true), new Rectangle((int)(c.Right + Th.D(10)), Th.D(11), noteChip.X - cw - Th.D(14) - (int)(c.Right + Th.D(10)), (int)cs), Th.Text, G.L);
@@ -529,7 +529,7 @@ namespace PKT
                     else if (st.Radio && i == 1) kusurDateR = Rectangle.Empty;
                     if (!st.Radio && on && !na)
                     {
-                        var dt = U.PT(F.checks[Flow.Key(S, i)]);
+                        var dt = U.PT(F.checks[Flow.Key(F, S, i)]);
                         string ds = dt.HasValue ? dt.Value.ToString("dd.MM.yyyy") : "Tarih gir";
                         int dw = G.TW(ds, Th.F(8f)) + Th.D(12);
                         var dr = new Rectangle(rr.Right - dw + Th.D(6), r.Y + (r.Height - Th.D(20)) / 2, dw, Th.D(20));
@@ -546,12 +546,12 @@ namespace PKT
         {
             base.OnMouseUp(e);
             if (F == null || e.Button != MouseButtons.Left) return;
-            var st = Flow.S[S];
+            var st = Flow.ViewOf(F, S);
             if (noteChip.Contains(e.Location)) { if (NotesClick != null) NotesClick(st.Key); return; }
             if (st.Radio && F.kusur == Flow.KusurVar && kusurDateR.Contains(e.Location)) { if (KusurDateClick != null) KusurDateClick(this, EventArgs.Empty); return; }
             for (int i = 0; i < rows.Count; i++)
             {
-                string k = Flow.Key(S, i);
+                string k = Flow.Key(F, S, i);
                 if (!st.Radio && i < dateLinks.Count && dateLinks[i] != Rectangle.Empty && dateLinks[i].Contains(e.Location) && Flow.Done(F, S, i) && !Flow.NA(F, S, i))
                 { if (ItemDateClick != null) ItemDateClick(i, new Point(dateLinks[i].Left, dateLinks[i].Bottom)); return; }
                 if (S == 3 && i < naLinks.Count && naLinks[i] != Rectangle.Empty && naLinks[i].Contains(e.Location))
@@ -793,7 +793,7 @@ namespace PKT
             int x = (int)ar.Right + Th.D(12);
             int wName = (int)pr.X - x - Th.D(8);
             G.T(g, string.IsNullOrWhiteSpace(f.ad) ? "(adsız firma)" : f.ad, Th.F(10f, true), new Rectangle(x, r.Y + Th.D(12), wName, Th.D(22)), cat == Flow.Cat.Iptal ? Th.Sub : Th.Text, G.L);
-            string sub = cat == Flow.Cat.Iptal ? "İptal / olumsuz" : (cur == 7 ? "Kusurlu olarak kapatıldı" : cur == Flow.DONE ? "Tüm aşamalar tamam" : Flow.S[cur].Short);
+            string sub = cat == Flow.Cat.Iptal ? "İptal / olumsuz" : (cur == 7 ? "Kusurlu olarak kapatıldı" : cur == Flow.DONE ? "Tüm aşamalar tamam" : Flow.ViewOf(f, cur).Short);
             int wSub = r.Right - Th.D(10) - dw - Th.D(12) - x;
             int bw = Math.Min(Th.D(90), Math.Max(Th.D(40), wSub - Th.D(110)));
             G.T(g, sub, Th.F(8.5f), new Rectangle(x, r.Y + Th.D(37), wSub - bw - Th.D(10), Th.D(18)), Th.Sub, G.L);

@@ -29,7 +29,7 @@ Uygulama bu soruları açılış ekranında yanıtlıyor.
 5. E-İmza ve Rapor: rapor hazırlandı, e-imza ile imzalandı, pazarlamaya iletildi
 6. Kusur / Eksiklik: kusur yok / kusur var, giderilmesi bekleniyor / giderildi / giderilmedi, hizmet kusurlu tamamlandı
 
-Firma yapılacak kalemleri kendisi ilettiyse **"Keşif gerekmedi"** seçeneğiyle Keşif aşaması iş akışından çıkar ve keşif tarihi pasif olur.
+Firma yapılacak kalemleri kendisi ilettiyse **"Keşif gerekmedi"** seçeneğiyle keşif tarihi pasif olur ve 2. aşama "Keşif" yerine **"Firma İletti"** (kalemler iletildi → teklif için pazarlamaya gönderildi) olarak izlenir.
 
 **Takip ve hatırlatmalar**
 - **Durum sayıları:** Devam eden, kusur bekleyen, uygun tamamlanan, kusurlu tamamlanan ve iptal edilen firmalar ayrı ayrı sayılır; kutucuğa tıklayınca liste o duruma süzülür.
@@ -63,7 +63,7 @@ Firma yapılacak kalemleri kendisi ilettiyse **"Keşif gerekmedi"** seçeneğiyl
 | ![Periyodik kontroller](docs/ekran/07-rapor-grafikler.png) | ![Notlar](docs/ekran/04-notlar.png) |
 | Önümüzdeki 12 ayın periyodik kontrolleri | Konuya göre notlar |
 | ![Keşif gerekmedi](docs/ekran/09-kesif-gerekmedi.png) | |
-| Keşif gerekmeyen firma: Keşif aşaması gizlenir | |
+| Keşif gerekmeyen firma: 2. aşama “Firma İletti” olur | |
 
 ## Kurulum
 

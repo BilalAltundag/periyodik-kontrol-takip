@@ -86,9 +86,11 @@ KESIF GEREKMEYEN FIRMALAR
 - Firma yapilacak kalemleri kendisi ilettiyse (kesif yapilmayacaksa)
   Planlama'daki "Kesif gerekmedi - kalemler firma tarafindan iletildi"
   dugmesine tiklayin.
-- Kesif tarihi pasif olur, Kesif asamasi is akisindan cikar ve diger
-  asamalarin numaralari kayar. Ilerleme yuzdesi kesif olmadan hesaplanir.
-- Tekrar tiklayinca geri acilir (kesif tarihi bos baslar).
+- Kesif tarihi pasif olur; 2. asama "Kesif" yerine "Firma Iletti" olarak
+  gorunur ve iki adimi vardir:
+    * Yapilacak kalemler firma tarafindan iletildi (otomatik isaretlenir)
+    * Kalemler teklif icin pazarlama departmanina gonderildi
+- Tekrar tiklayinca normal Kesif asamasina doner (kesif tarihi bos baslar).
 
 IS AKISI
 1 Firma Bulma      : Uygun firma bulundu / Iletisim ve gerekli bilgiler kaydedildi
