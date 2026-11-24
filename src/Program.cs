@@ -10,8 +10,8 @@ using System.Windows.Forms;
 [assembly: AssemblyDescription("Periyodik Kontrol Takip")]
 [assembly: AssemblyProduct("Periyodik Kontrol Takip")]
 [assembly: AssemblyCopyright("")]
-[assembly: AssemblyVersion("4.2.0.0")]
-[assembly: AssemblyFileVersion("4.2.0.0")]
+[assembly: AssemblyVersion("4.3.0.0")]
+[assembly: AssemblyFileVersion("4.3.0.0")]
 
 namespace PKT
 {

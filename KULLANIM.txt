@@ -1,4 +1,4 @@
-PERIYODIK KONTROL TAKIP v4.2 - KULLANIM
+PERIYODIK KONTROL TAKIP v4.3 - KULLANIM
 =======================================
 Normal bir Windows programidir (tarayici / internet kullanmaz).
 
@@ -81,6 +81,14 @@ KONTROL GUNLERI (BIRDEN FAZLA GUN)
 - Sonraki gun belli degilse "Devam edecek - sonraki gun belirsiz" isaretleyin;
   "Yaklasan ve Takip"te "Kontrol suruyor - tarih belirsiz" olarak gorunur.
 - Kontrol, 4. adimdaki Elektrik / Mekanik isaretlenince biter.
+
+KESIF GEREKMEYEN FIRMALAR
+- Firma yapilacak kalemleri kendisi ilettiyse (kesif yapilmayacaksa)
+  Planlama'daki "Kesif gerekmedi - kalemler firma tarafindan iletildi"
+  dugmesine tiklayin.
+- Kesif tarihi pasif olur, Kesif asamasi is akisindan cikar ve diger
+  asamalarin numaralari kayar. Ilerleme yuzdesi kesif olmadan hesaplanir.
+- Tekrar tiklayinca geri acilir (kesif tarihi bos baslar).
 
 IS AKISI
 1 Firma Bulma      : Uygun firma bulundu / Iletisim ve gerekli bilgiler kaydedildi

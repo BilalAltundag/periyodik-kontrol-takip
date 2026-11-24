@@ -2,7 +2,7 @@
  "surum": 3,
  "firms": [
   {
-   "id": "af0dc35c2682",
+   "id": "0d6461b033ad",
    "ad": "Örnek Plastik A.Ş.",
    "yetkili": "Yetkili Kişi 1",
    "tel": "0500 000 00 01",
@@ -15,6 +15,7 @@
    "kontrolTarih": "",
    "kontrolGunleri": [],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -31,7 +32,7 @@
    },
    "notlar": [
     {
-     "id": "5bd04ba9cac9",
+     "id": "fc08741eaf60",
      "asama": "bulma",
      "metin": "Fuar ziyaretinde tanışıldı, katalog bırakıldı.",
      "tarih": "2026-11-15T14:01:00.0000000+03:00"
@@ -39,7 +40,7 @@
    ]
   },
   {
-   "id": "1f670580f6be",
+   "id": "bef2a1e1feb3",
    "ad": "Demo Mobilya Ltd.",
    "yetkili": "Yetkili Kişi 2",
    "tel": "0500 000 00 02",
@@ -52,6 +53,7 @@
    "kontrolTarih": "",
    "kontrolGunleri": [],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -69,7 +71,7 @@
    },
    "notlar": [
     {
-     "id": "348964925512",
+     "id": "5fbddeeac326",
      "asama": "genel",
      "metin": "Gelecek hafta tekrar aranacak.",
      "tarih": "2026-11-12T14:02:00.0000000+03:00"
@@ -77,7 +79,7 @@
    ]
   },
   {
-   "id": "7ff637bfd8e9",
+   "id": "c7f9baa8ae06",
    "ad": "Test Ambalaj San.",
    "yetkili": "Yetkili Kişi 3",
    "tel": "0500 000 00 03",
@@ -90,6 +92,7 @@
    "kontrolTarih": "",
    "kontrolGunleri": [],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -108,7 +111,7 @@
    },
    "notlar": [
     {
-     "id": "9b7a1029c908",
+     "id": "5d2bd0033b97",
      "asama": "kesif",
      "metin": "Keşif için 26 Kasım saat 10:00 uygun dediler.",
      "tarih": "2026-11-18T14:03:00.0000000+03:00"
@@ -116,7 +119,7 @@
    ]
   },
   {
-   "id": "366163977465",
+   "id": "dafb0cb24859",
    "ad": "Model Makine A.Ş.",
    "yetkili": "Yetkili Kişi 4",
    "tel": "0500 000 00 04",
@@ -129,6 +132,7 @@
    "kontrolTarih": "",
    "kontrolGunleri": [],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -149,13 +153,13 @@
    },
    "notlar": [
     {
-     "id": "d6e42460a9c5",
+     "id": "74817fea9ef7",
      "asama": "kesif",
      "metin": "Elektrik pano sayısı ~14, kompresör 2 adet.",
      "tarih": "2026-11-03T14:04:00.0000000+03:00"
     },
     {
-     "id": "4a976c5314cc",
+     "id": "49152016976f",
      "asama": "sozlesme",
      "metin": "Teklif yönetime iletildi, cevap bekleniyor.",
      "tarih": "2026-11-13T14:04:00.0000000+03:00"
@@ -163,7 +167,7 @@
    ]
   },
   {
-   "id": "5b6dcf6d7b20",
+   "id": "59d2d3a11c51",
    "ad": "Deneme Tekstil Ltd.",
    "yetkili": "Yetkili Kişi 5",
    "tel": "0500 000 00 05",
@@ -171,7 +175,7 @@
    "adres": "Örnek OSB, Örnek İlçe",
    "durum": "Aktif",
    "ucret": "Ücretli",
-   "kesifTarih": "2026-10-24",
+   "kesifTarih": "",
    "sozlesmeTarih": "2026-11-15",
    "kontrolTarih": "2026-11-24",
    "kontrolGunleri": [
@@ -179,6 +183,7 @@
     "2026-11-25"
    ],
    "kontrolDevam": false,
+   "kesifYok": true,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -193,15 +198,18 @@
    "checks": {
     "0-0": "2026-10-12T11:00:00.0000000+03:00",
     "0-1": "2026-10-14T11:01:00.0000000+03:00",
-    "1-0": "2026-10-16T11:02:00.0000000+03:00",
-    "1-1": "2026-10-18T11:03:00.0000000+03:00",
-    "1-2": "2026-10-20T11:04:00.0000000+03:00",
     "2-0": "2026-10-22T11:05:00.0000000+03:00",
     "2-1": "2026-10-24T11:06:00.0000000+03:00"
    },
    "notlar": [
     {
-     "id": "4e03bbb4e990",
+     "id": "835191619b73",
+     "asama": "genel",
+     "metin": "Keşif yapılmadı; yapılacak kalemler firma tarafından e-posta ile iletildi.",
+     "tarih": "2026-11-09T14:05:00.0000000+03:00"
+    },
+    {
+     "id": "af01bd426a1e",
      "asama": "kontrol",
      "metin": "Kontrol iki güne yayılacak (A ve B blok).",
      "tarih": "2026-11-16T14:05:00.0000000+03:00"
@@ -209,7 +217,7 @@
    ]
   },
   {
-   "id": "588600669d80",
+   "id": "a80f00976db0",
    "ad": "Taslak Gıda A.Ş.",
    "yetkili": "Yetkili Kişi 6",
    "tel": "0500 000 00 06",
@@ -225,6 +233,7 @@
     "2026-11-19"
    ],
    "kontrolDevam": true,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -247,7 +256,7 @@
    },
    "notlar": [
     {
-     "id": "7afa195741f5",
+     "id": "3b9f4617b353",
      "asama": "kontrol",
      "metin": "B blok kontrolü kaldı, tarih firma tarafından bildirilecek.",
      "tarih": "2026-11-19T14:06:00.0000000+03:00"
@@ -255,7 +264,7 @@
    ]
   },
   {
-   "id": "4cc9a6ac6a55",
+   "id": "d9ac9809cd27",
    "ad": "Prova Metal San.",
    "yetkili": "Yetkili Kişi 7",
    "tel": "0500 000 00 07",
@@ -270,6 +279,7 @@
     "2026-11-06"
    ],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -295,7 +305,7 @@
    },
    "notlar": [
     {
-     "id": "72c81dc89ca8",
+     "id": "263b33b6e9f8",
      "asama": "rapor",
      "metin": "Raporlar hazırlandı, e-imza bekliyor.",
      "tarih": "2026-11-17T14:07:00.0000000+03:00"
@@ -303,7 +313,7 @@
    ]
   },
   {
-   "id": "f4cd977a9ccf",
+   "id": "f576cb4925eb",
    "ad": "Numune Kimya A.Ş.",
    "yetkili": "Yetkili Kişi 8",
    "tel": "0500 000 00 08",
@@ -318,6 +328,7 @@
     "2026-10-12"
    ],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -345,7 +356,7 @@
    },
    "notlar": [
     {
-     "id": "af5bdf7d4490",
+     "id": "a92d95186c99",
      "asama": "kusur",
      "metin": "Topraklama ölçümünde 2 noktada uygunsuzluk; firmaya bildirildi.",
      "tarih": "2026-11-03T14:08:00.0000000+03:00"
@@ -353,7 +364,7 @@
    ]
   },
   {
-   "id": "0e833a05bf7e",
+   "id": "465fcf4edb67",
    "ad": "Örnek Otomotiv Ltd.",
    "yetkili": "Yetkili Kişi 9",
    "tel": "0500 000 00 09",
@@ -369,6 +380,7 @@
     "2026-09-03"
    ],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -396,7 +408,7 @@
    },
    "notlar": [
     {
-     "id": "3b8da8eebe54",
+     "id": "b294f45f87cb",
      "asama": "kusur",
      "metin": "Kusurların giderildiği fotoğraflarla teyit edildi.",
      "tarih": "2026-09-22T14:09:00.0000000+03:00"
@@ -404,7 +416,7 @@
    ]
   },
   {
-   "id": "45f536f79cff",
+   "id": "b72c01479d3c",
    "ad": "Demo Lojistik A.Ş.",
    "yetkili": "Yetkili Kişi 10",
    "tel": "0500 000 00 10",
@@ -419,6 +431,7 @@
     "2026-08-13"
    ],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -446,7 +459,7 @@
    },
    "notlar": [
     {
-     "id": "1eb02360b2f0",
+     "id": "77dea7096f6c",
      "asama": "kusur",
      "metin": "30 gün geçti, kusurlar giderilmedi. Hizmet otomatik olarak “kusurlu tamamlandı” durumuna geçirildi.",
      "tarih": "2026-09-13T14:10:00.0000000+03:00"
@@ -454,7 +467,7 @@
    ]
   },
   {
-   "id": "a9ed79966ede",
+   "id": "086afec1dbc2",
    "ad": "Test Enerji A.Ş.",
    "yetkili": "Yetkili Kişi 11",
    "tel": "0500 000 00 11",
@@ -469,6 +482,7 @@
     "2025-12-11"
    ],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -496,7 +510,7 @@
    },
    "notlar": [
     {
-     "id": "6d08452d40db",
+     "id": "32f401f84f6d",
      "asama": "genel",
      "metin": "Yıllık periyodik kontrol yaklaşıyor, firmaya hatırlatma yapılacak.",
      "tarih": "2026-11-20T14:11:00.0000000+03:00"
@@ -504,7 +518,7 @@
    ]
   },
   {
-   "id": "9021202f763e",
+   "id": "d3efc15e7159",
    "ad": "Model İnşaat Ltd.",
    "yetkili": "Yetkili Kişi 12",
    "tel": "0500 000 00 12",
@@ -519,6 +533,7 @@
     "2026-06-04"
    ],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 6,
    "hatirlatGun": 45,
@@ -547,7 +562,7 @@
    "notlar": []
   },
   {
-   "id": "ad2c61bf4fbb",
+   "id": "144edf50ddb9",
    "ad": "Deneme Seramik San.",
    "yetkili": "Yetkili Kişi 13",
    "tel": "0500 000 00 13",
@@ -560,6 +575,7 @@
    "kontrolTarih": "",
    "kontrolGunleri": [],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -578,7 +594,7 @@
    },
    "notlar": [
     {
-     "id": "d2d0541b9fdd",
+     "id": "03829ab26f12",
      "asama": "genel",
      "metin": "Başka firma ile çalışmaya karar verdiler.",
      "tarih": "2026-11-06T14:13:00.0000000+03:00"
@@ -586,7 +602,7 @@
    ]
   },
   {
-   "id": "053d5c84c799",
+   "id": "d0d4b19b126c",
    "ad": "Taslak Depo Ltd.",
    "yetkili": "Yetkili Kişi 14",
    "tel": "0500 000 00 14",
@@ -599,6 +615,7 @@
    "kontrolTarih": "",
    "kontrolGunleri": [],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -616,7 +633,7 @@
    },
    "notlar": [
     {
-     "id": "61c44a532fcc",
+     "id": "5556a6c76aa9",
      "asama": "genel",
      "metin": "Firma kapandı, arşive alındı.",
      "tarih": "2026-11-19T14:14:00.0000000+03:00"
@@ -624,7 +641,7 @@
    ]
   },
   {
-   "id": "5b74f56761ab",
+   "id": "1c7453c50422",
    "ad": "Prova Elektronik A.Ş.",
    "yetkili": "Yetkili Kişi 15",
    "tel": "0500 000 00 15",
@@ -637,6 +654,7 @@
    "kontrolTarih": "",
    "kontrolGunleri": [],
    "kontrolDevam": false,
+   "kesifYok": false,
    "sonrakiKontrol": "",
    "periyotAy": 12,
    "hatirlatGun": 30,
@@ -654,7 +672,7 @@
    },
    "notlar": [
     {
-     "id": "9ee1349d729e",
+     "id": "2106e1927995",
      "asama": "bulma",
      "metin": "Yetkili izinde, dönüşte aranacak.",
      "tarih": "2026-10-24T14:15:00.0000000+03:00"

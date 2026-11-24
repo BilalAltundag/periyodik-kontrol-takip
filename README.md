@@ -29,6 +29,8 @@ Uygulama bu soruları açılış ekranında yanıtlıyor.
 5. E-İmza ve Rapor: rapor hazırlandı, e-imza ile imzalandı, pazarlamaya iletildi
 6. Kusur / Eksiklik: kusur yok / kusur var, giderilmesi bekleniyor / giderildi / giderilmedi, hizmet kusurlu tamamlandı
 
+Firma yapılacak kalemleri kendisi ilettiyse **"Keşif gerekmedi"** seçeneğiyle Keşif aşaması iş akışından çıkar ve keşif tarihi pasif olur.
+
 **Takip ve hatırlatmalar**
 - **Durum sayıları:** Devam eden, kusur bekleyen, uygun tamamlanan, kusurlu tamamlanan ve iptal edilen firmalar ayrı ayrı sayılır; kutucuğa tıklayınca liste o duruma süzülür.
 - **Aşama dağılımı:** Halka grafik; bir aşamaya tıklayınca o aşamadaki firmalar listelenir.
@@ -60,6 +62,8 @@ Uygulama bu soruları açılış ekranında yanıtlıyor.
 | Aylık takvim | Aylık özet ve son 6 ay |
 | ![Periyodik kontroller](docs/ekran/07-rapor-grafikler.png) | ![Notlar](docs/ekran/04-notlar.png) |
 | Önümüzdeki 12 ayın periyodik kontrolleri | Konuya göre notlar |
+| ![Keşif gerekmedi](docs/ekran/09-kesif-gerekmedi.png) | |
+| Keşif gerekmeyen firma: Keşif aşaması gizlenir | |
 
 ## Kurulum
 

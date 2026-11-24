@@ -31,7 +31,7 @@ namespace PKT
         public static bool NoPopup;
         // görünümler
         Segmented nav; int view; Card cCal, cRep; CalendarView cal; Scroller repSc; ReportCanvas rep;
-        PillButton bRestore, bDonem, bPer, bHat, bOto;
+        PillButton bRestore, bDonem, bPer, bHat, bOto, bKesifYok;
         readonly Timer autoT = new Timer { Interval = 10 * 60 * 1000 }; Label lYil, yilHint; DateField dYil;
         List<Firm> Live() { return st.Firms.Where(f => !f.arsiv).ToList(); }
 
@@ -313,6 +313,18 @@ namespace PKT
             hPlan = Head("Planlama");
             lKe = Cap("Keşif tarihi"); lSo = Cap("İSG-KATİP sözleşme tarihi"); lKo = Cap("Kontrol günleri (ekle)");
             dKe = DateBox(v => { cur.kesifTarih = v; if (v != "" && !Flow.Done(cur, 1, 0)) cur.checks["1-0"] = U.Now(); });
+            dKe.DisabledText = "Keşif yok";
+            bKesifYok = new PillButton { Kind = "plain", Font = Th.F(8.75f, true), BackColor = Color.White, Height = Th.D(30), Accent = Th.Blue };
+            bKesifYok.Click += (s, e) =>
+            {
+                if (cur == null) return;
+                cur.kesifYok = !cur.kesifYok;
+                if (cur.kesifYok) { cur.kesifTarih = ""; binding = true; dKe.SetValue(null, false); binding = false; }
+                dKe.Enabled = !cur.kesifYok;
+                Changed(); LayoutDetail();
+            };
+            tip.SetToolTip(bKesifYok, "Firma yapılacak kalemleri kendisi ilettiyse işaretleyin: keşif tarihi pasif olur ve Keşif aşaması iş akışından çıkar.");
+            dc.Controls.Add(bKesifYok);
             dSo = DateBox(v => { cur.sozlesmeTarih = v; if (v != "" && !Flow.Done(cur, 2, 1)) cur.checks["2-1"] = new DateTimeOffset(U.PD(v).Value + DateTime.Now.TimeOfDay).ToString("o"); });
             dKo = DateBox(v => { if (v != "" && !cur.kontrolGunleri.Contains(v)) cur.kontrolGunleri.Add(v); Flow.SyncKontrol(cur); });
             dKo.Placeholder = "gg.aa.yyyy  → ekle";
@@ -536,6 +548,10 @@ namespace PKT
             // Planlama
             y = Section(hPlan, y);
             int third = (w - gap * 2) / 3;
+            bKesifYok.Text = cur.kesifYok ? "✓ Keşif yapılmadı — kalemler firma tarafından iletildi" : "Keşif gerekmedi — kalemler firma tarafından iletildi";
+            bKesifYok.Active = cur.kesifYok; bKesifYok.Width = bKesifYok.PrefW(); bKesifYok.Location = new Point(x, y);
+            y += bKesifYok.Height + Th.D(10);
+            lKe.Text = cur.kesifYok ? "Keşif tarihi (pasif)" : "Keşif tarihi";
             lKe.SetBounds(x, y, third, Th.D(20)); lSo.SetBounds(x + third + gap, y, third, Th.D(20)); lKo.SetBounds(x + (third + gap) * 2, y, third, Th.D(20)); y += Th.D(22);
             dKe.SetBounds(x, y, third, dKe.Height); dSo.SetBounds(x + third + gap, y, third, dSo.Height); dKo.SetBounds(x + (third + gap) * 2, y, third, dKo.Height);
             y += dKe.Height + Th.D(8);
@@ -575,19 +591,24 @@ namespace PKT
             // İş akışı
             y = Section(hAkis, y);
             bool two = w >= Th.D(600);
+            // Keşif gerekmediyse Keşif aşaması gösterilmez; numaralar kayar
+            var vis = stages.Where(s => !(s.S == 1 && cur.kesifYok)).ToList();
+            foreach (var s in stages) s.Visible = vis.Contains(s);
+            for (int i = 0; i < vis.Count; i++) vis[i].Num = i + 1;
             if (two)
             {
                 int cwid = (w - gap) / 2;
-                for (int r = 0; r < 3; r++)
+                for (int r = 0; r < vis.Count; r += 2)
                 {
-                    var a = stages[r * 2]; var b = stages[r * 2 + 1];
-                    int h = Math.Max(a.Calc(cwid), b.Calc(cwid));
-                    a.SetBounds(x, y, cwid, h); b.SetBounds(x + cwid + gap, y, cwid, h);
+                    var a = vis[r]; var b = r + 1 < vis.Count ? vis[r + 1] : null;
+                    int h = Math.Max(a.Calc(cwid), b != null ? b.Calc(cwid) : 0);
+                    a.SetBounds(x, y, cwid, h);
+                    if (b != null) b.SetBounds(x + cwid + gap, y, cwid, h);
                     y += h + gap;
                 }
             }
             else
-                foreach (var s in stages) { int h = s.Calc(w); s.SetBounds(x, y, w, h); y += h + gap; }
+                foreach (var s in vis) { int h = s.Calc(w); s.SetBounds(x, y, w, h); y += h + gap; }
             y += Th.D(6);
 
             // Notlar
@@ -767,7 +788,7 @@ namespace PKT
             sgDurum.Sel = Flow.IsIptal(f) ? 1 : 0; sgDurum.Invalidate();
             sgUcret.Sel = f.ucret == Flow.Ucretsiz ? 1 : (f.ucret == Flow.Ucretli ? 0 : -1); sgUcret.Invalidate();
             fY.Value = f.yetkili; fT.Value = f.tel; fE.Value = f.eposta; fA.Value = f.adres;
-            dKe.SetValue(U.PD(f.kesifTarih), false); dSo.SetValue(U.PD(f.sozlesmeTarih), false); dKo.SetValue(U.PD(f.kontrolTarih), false);
+            dKe.SetValue(U.PD(f.kesifTarih), false); dKe.Enabled = !f.kesifYok; dSo.SetValue(U.PD(f.sozlesmeTarih), false); dKo.SetValue(U.PD(f.kontrolTarih), false);
             foreach (var s in stages) s.F = f;
             dayc.F = f; dKo.SetValue(null, false);
             dYil.SetValue(Flow.NextYearly(f), false);

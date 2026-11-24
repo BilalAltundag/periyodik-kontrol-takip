@@ -183,6 +183,7 @@ namespace PKT
         public bool arsiv; public string arsivTarih = "", sonrakiKontrol = "";
         public int periyotAy = 12, hatirlatGun = 30;
         public bool otoKapat = true;
+        public bool kesifYok; // keşif yapılmadı, yapılacak kalemler firma tarafından iletildi
         public List<Dictionary<string, object>> donemler = new List<Dictionary<string, object>>();
         public Dictionary<string, string> checks = new Dictionary<string, string>();
         public List<Note> notlar = new List<Note>();
@@ -265,6 +266,7 @@ namespace PKT
         public static bool StageDone(Firm f, int s)
         {
             if (S[s].Radio) return f.kusur == KusurYok || f.kusur == KusurGid || f.kusur == KusurluTam;
+            if (s == 1 && f.kesifYok) return true;
             for (int i = 0; i < S[s].Items.Length; i++) if (!Done(f, s, i)) return false;
             return true;
         }
@@ -279,7 +281,7 @@ namespace PKT
         public static int Percent(Firm f)
         {
             int t = 0, d = 0;
-            for (int s = 0; s < S.Length; s++) { t += StageTotal(s); d += StageCount(f, s); }
+            for (int s = 0; s < S.Length; s++) { if (s == 1 && f.kesifYok) continue; t += StageTotal(s); d += StageCount(f, s); }
             return t == 0 ? 0 : (int)Math.Round(100.0 * d / t);
         }
         public enum Cat { Devam = 1, Kusur = 2, Tamam = 3, KusurluTamam = 4, Iptal = 5 }
@@ -328,7 +330,7 @@ namespace PKT
             if (o.HasValue && StageDone(f, 3)) return o;
             return AutoYearly(f);
         }
-        public static DateTime? KesifYapildi(Firm f) { if (!Done(f, 1, 1) || NA(f, 1, 1)) return null; return U.PD(f.kesifTarih) ?? Stamp(f, 1, 1); }
+        public static DateTime? KesifYapildi(Firm f) { if (f.kesifYok || !Done(f, 1, 1) || NA(f, 1, 1)) return null; return U.PD(f.kesifTarih) ?? Stamp(f, 1, 1); }
         public static DateTime? SozlesmeYapildi(Firm f) { if (!Done(f, 2, 1)) return null; return U.PD(f.sozlesmeTarih) ?? Stamp(f, 2, 1); }
         public static DateTime? RaporGonderildi(Firm f) { return Stamp(f, 4, 2); }
 
@@ -493,6 +495,7 @@ namespace PKT
             if (int.TryParse(S(d, "periyotAy"), out iv) && iv > 0) f.periyotAy = iv;
             if (int.TryParse(S(d, "hatirlatGun"), out iv) && iv >= 0) f.hatirlatGun = iv;
             if (d.TryGetValue("otoKapat", out kg) && kg is bool) f.otoKapat = (bool)kg;
+            if (d.TryGetValue("kesifYok", out kg) && kg is bool) f.kesifYok = (bool)kg;
             if (d.TryGetValue("donemler", out kg) && kg is ArrayList)
                 foreach (var x in (ArrayList)kg) { var dd = x as Dictionary<string, object>; if (dd != null) f.donemler.Add(dd); }
 
@@ -567,7 +570,7 @@ namespace PKT
             d["durum"] = f.durum; d["ucret"] = f.ucret;
             d["kesifTarih"] = f.kesifTarih; d["sozlesmeTarih"] = f.sozlesmeTarih; d["kontrolTarih"] = f.kontrolTarih;
             d["kontrolGunleri"] = f.kontrolGunleri; d["kontrolDevam"] = f.kontrolDevam;
-            d["sonrakiKontrol"] = f.sonrakiKontrol; d["periyotAy"] = f.periyotAy; d["hatirlatGun"] = f.hatirlatGun; d["otoKapat"] = f.otoKapat; d["arsiv"] = f.arsiv; d["arsivTarih"] = f.arsivTarih; d["donemler"] = f.donemler;
+            d["sonrakiKontrol"] = f.sonrakiKontrol; d["periyotAy"] = f.periyotAy; d["hatirlatGun"] = f.hatirlatGun; d["otoKapat"] = f.otoKapat; d["kesifYok"] = f.kesifYok; d["arsiv"] = f.arsiv; d["arsivTarih"] = f.arsivTarih; d["donemler"] = f.donemler;
             d["kusur"] = f.kusur; d["kusurTarih"] = f.kusurTarih; d["olusturma"] = f.olusturma; d["guncelleme"] = f.guncelleme;
             d["checks"] = f.checks;
             d["notlar"] = f.notlar.Select(n => new Dictionary<string, object> { { "id", n.id }, { "asama", n.asama }, { "metin", n.metin }, { "tarih", n.tarih } }).ToList();
@@ -620,7 +623,7 @@ namespace PKT
             {
                 var notes = string.Join(" | ", f.notlar.OrderBy(n => n.tarih).Select(n => "[" + Flow.TopicName(n.asama) + "] " + n.metin));
                 sb.AppendLine(string.Join(";", new[] { f.ad, f.durum, Flow.CatName(Flow.Category(f)), Flow.StageName(Flow.Bucket(f)),
-                    Flow.Percent(f).ToString(), f.ucret, U.DS(f.kesifTarih), U.DS(f.sozlesmeTarih), string.Join(", ", f.kontrolGunleri.Select(U.DS)) + (f.kontrolDevam ? " (devam edecek)" : ""), f.kusur,
+                    Flow.Percent(f).ToString(), f.ucret, f.kesifYok ? "Keşif yok (kalemler iletildi)" : U.DS(f.kesifTarih), U.DS(f.sozlesmeTarih), string.Join(", ", f.kontrolGunleri.Select(U.DS)) + (f.kontrolDevam ? " (devam edecek)" : ""), f.kusur,
                     f.yetkili, f.tel, f.eposta, f.adres, notes, U.TS(f.guncelleme) }.Select(q)));
             }
             File.WriteAllText(path, sb.ToString(), new UTF8Encoding(true));

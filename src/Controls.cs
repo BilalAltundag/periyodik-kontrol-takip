@@ -221,6 +221,7 @@ namespace PKT
     {
         public TextBox Box; public string IconKind; public bool Error; protected int RightPad;
         public string Placeholder = "";
+        public string DisabledText = "";
         readonly bool multi;
         public FieldBox(bool multiline = false, float size = 9.75f)
         {
@@ -238,11 +239,12 @@ namespace PKT
         public string Value { get { return Box.Text; } set { Box.Text = value ?? ""; UpdPh(); } }
         void UpdPh()
         {
-            bool show = Box.Text.Length == 0 && !Box.Focused;
+            bool show = (Box.Text.Length == 0 && !Box.Focused) || !Enabled;
             Box.Visible = !show; TabStop = show; Invalidate();
         }
         public void FocusBox() { Box.Visible = true; TabStop = false; Box.Focus(); }
-        protected override void OnGotFocus(EventArgs e) { base.OnGotFocus(e); FocusBox(); }
+        protected override void OnGotFocus(EventArgs e) { base.OnGotFocus(e); if (Enabled) FocusBox(); }
+        protected override void OnEnabledChanged(EventArgs e) { base.OnEnabledChanged(e); UpdPh(); }
         protected override void OnLayout(LayoutEventArgs e)
         {
             base.OnLayout(e);
@@ -259,6 +261,13 @@ namespace PKT
         {
             var g = e.Graphics; g.Clear(BackColor); G.AA(g);
             var r = new RectangleF(0, 0, Width - 1, Height - 1);
+            if (!Enabled)
+            {
+                G.Fill(g, r, Th.D(10), Th.Soft);
+                using (var p = new System.Drawing.Pen(Th.Sep) { DashStyle = System.Drawing.Drawing2D.DashStyle.Dash }) using (var gp = G.RR(new RectangleF(.5f, .5f, Width - 2, Height - 2), Th.D(10))) g.DrawPath(p, gp);
+                G.T(g, DisabledText != "" ? DisabledText : "—", Box.Font, new Rectangle(Th.D(12), 0, Width - Th.D(20), Height), Th.Gray, G.L);
+                return;
+            }
             G.Fill(g, r, Th.D(10), Th.Field);
             if (Error) G.Stroke(g, new RectangleF(.75f, .75f, Width - 2.5f, Height - 2.5f), Th.D(10), Th.Red, Th.K * 1.5f);
             else if (Box.Focused) G.Stroke(g, new RectangleF(.75f, .75f, Width - 2.5f, Height - 2.5f), Th.D(10), Th.Tint(Th.Blue, .55f), Th.K * 1.5f);
@@ -297,6 +306,7 @@ namespace PKT
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
+            if (!Enabled) return;
             var g = e.Graphics;
             G.Icon(g, "cal", calR, Th.Blue, Th.K * 1.6f);
             if (Value2.HasValue)
@@ -396,7 +406,7 @@ namespace PKT
     // Tek bir iş akışı aşaması (kart)
     class StageCard : BaseCtl
     {
-        public Firm F; public int S; public int NoteCount; public bool IsCurrent;
+        public Firm F; public int S; public int NoteCount; public bool IsCurrent; public int Num;
         public event EventHandler Changed;
         public event Action<string> NotesClick;
         public event EventHandler KusurDateClick;
@@ -442,8 +452,8 @@ namespace PKT
             int pad = Th.D(12); float cs = Th.D(24);
             var c = new RectangleF(pad, Th.D(11), cs, cs);
             if (done) { G.Circle(g, c, Th.Green); G.Icon(g, "check", new RectangleF(c.X + cs * .18f, c.Y + cs * .18f, cs * .64f, cs * .64f), Color.White, Th.K * 2f); }
-            else if (IsCurrent) { G.Circle(g, c, st.Color); G.T(g, (S + 1).ToString(), Th.F(9f, true), Rectangle.Round(c), Color.White, G.C); }
-            else { G.Ring(g, new RectangleF(c.X + 1, c.Y + 1, cs - 2, cs - 2), Th.H("#C7C7CC"), Th.K * 1.4f); G.T(g, (S + 1).ToString(), Th.F(9f, true), Rectangle.Round(c), Th.Sub, G.C); }
+            else if (IsCurrent) { G.Circle(g, c, st.Color); G.T(g, (Num > 0 ? Num : S + 1).ToString(), Th.F(9f, true), Rectangle.Round(c), Color.White, G.C); }
+            else { G.Ring(g, new RectangleF(c.X + 1, c.Y + 1, cs - 2, cs - 2), Th.H("#C7C7CC"), Th.K * 1.4f); G.T(g, (Num > 0 ? Num : S + 1).ToString(), Th.F(9f, true), Rectangle.Round(c), Th.Sub, G.C); }
 
             // not çipi
             string nt = NoteCount > 0 ? NoteCount.ToString() : "Not";

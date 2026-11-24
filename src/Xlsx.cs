@@ -137,7 +137,7 @@ namespace PKT
             {
                 var cat = Flow.Category(f);
                 fs.Rows.Add(new object[] { f.ad, f.durum, Flow.CatName(cat), Flow.StageName(Flow.Bucket(f)), Flow.Percent(f), f.ucret,
-                    D(U.PD(f.kesifTarih)), D(U.PD(f.sozlesmeTarih)), string.Join(", ", Flow.Days(f).Select(d => d.ToString("dd.MM.yyyy"))),
+                    f.kesifYok ? (object)"Keşif yok (kalemler iletildi)" : D(U.PD(f.kesifTarih)), D(U.PD(f.sozlesmeTarih)), string.Join(", ", Flow.Days(f).Select(d => d.ToString("dd.MM.yyyy"))),
                     f.kontrolDevam ? "Evet" : "", D(Flow.NextYearly(f)), f.kusur, f.kusur == Flow.KusurVar ? D(U.PT(f.kusurTarih)) : null,
                     f.yetkili, f.tel, f.eposta, f.adres, D(U.PT(f.guncelleme)), Flow.IdleDays(f), f.arsiv ? "Arşivde" : "" });
             }
